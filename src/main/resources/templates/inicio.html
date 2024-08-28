@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <title>Inicio</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link
+            href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+            rel="stylesheet" />
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link th:href="@{/css/normalizacion.css}" rel="stylesheet">
+</head>
+<body>
+<aside class="background--banner">
+    <video muted autoplay loop poster="images/portada.jpg">
+        <source src="video/avengers4.mp4" type="video/mp4">
+        <img src="images/portada.jpg" alt="Imagen background">
+    </video>
+    <div class="banner">
+        <div class="menu">
+            <nav>
+                <ul class="navegacion navegacion--izquierda">
+                    <li class="logo"><a href="#"><img src="images/movie.png" alt="Netflix"></a></li>
+                    <li><a href="#">Explorar ⏷</a></li>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/peliculas">Peliculas</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul class="navegacion navegacion--derecha">
+                    <li><a href="#"><img src="images/lupa.svg" alt="Lupa"></a></li>
+                    <li><a href="/admin">Administracion</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"><img src="images/campana.png" alt="Campana"></a></li>
+                    <li class="usuario img-thumbnail w-100"><a href="#"><img src="images/user.png" alt="Usuario" ></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="imagotipo">
+            <div class="imagotipo--imagen">
+                <img src="images/marvel.png" alt="Imagotipo">
+            </div>
+            <div class="imagotipo--info">
+                <p>⏵Play</p>
+                <p>ⓘ More Info</p>
+            </div>
+        </div>
+    </div>
+</aside>
+<div layout:fragment="content" class="container my-5"></div>
+<main class="catalogos">
+    <section class="catalogo--peliculas">
+        <h1>Películas Populares</h1>
+        <div class="peliculas" id="populares">
+
+        </div>
+    </section>
+    <section class="catalogo--peliculas">
+        <h2>Películas de Estreno</h2>
+        <div class="peliculas" id="estreno">
+
+        </div>
+    </section>
+    <section class="catalogo--peliculas">
+        <h2>Películas más vistas</h2>
+        <div class="peliculas" id="vistas">
+
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer--contenedor">
+        <ul class="iconos">
+            <li><a href="#"><img src="images/facebook.svg" alt="facebook"></a></li>
+            <li><a href="#"><img src="images/instagram.svg" alt="instagram"></a></li>
+            <li><a href="#"><img src="images/github.svg" alt="github"></a></li>
+            <li><a href="#"><img src="images/linkedin.svg" alt="linkedin"></a></li>
+        </ul>
+        <div class="informacion">
+            <p>Preguntas frecuentes</p>
+            <p>Prensa</p>
+            <p>Formas de ver</p>
+            <p>Preferencias de cookies</p>
+            <p>Pruebas de velocidad</p>
+            <p>Centro de ayuda</p>
+            <p>Relaciones con inversionistas</p>
+            <p>Terminos de uso</p>
+            <p>Informacion corporativa</p>
+            <p>Cuenta</p>
+            <p>Empleo</p>
+            <p>Privacidad</p>
+            <p>Contactanos</p>
+            <p>Solo en netflix</p>
+        </div>
+        <p class="idioma">🌎︎ Español</p>
+        <p class="contruccion">Movie trailers 2024</p>
+    </div>
+</footer>
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<script
+        src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script
+        src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<div layout:fragment="scripts" th:remove="tag">
+
+</div>
+<script th:src="@{/js/index.js}"></script>
+</body>
+</html>
