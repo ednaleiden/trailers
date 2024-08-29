@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div layout:fragment="content" th:object="${pelicula}">
+<div layout:fragment="content"  class="catalogos" th:object="${pelicula}">
     <div class="row">
         <div class="col-md-6">
             <img th:src="@{/assets/{filename}(filename=*{rutaPortada})}"
