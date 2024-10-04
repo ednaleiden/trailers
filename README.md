@@ -47,5 +47,5 @@ name data base : pelis
 
 
 ![Insignia de logro Patrocinador público](https://github.githubassets.com/images/modules/profile/achievements/public-sponsor-default.png)
-- | **Galaxy Brain** 
+ 
 - **¡Saludos!**
