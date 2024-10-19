@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+}
+video{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+}
+img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+/* Banner */
+.background--banner{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.banner{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    background-color: black;
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%,rgba(0, 0, 0, .9) 1%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 1) 100%);
+}
+/* Menu */
+.menu{
+    width: 95%;
+    margin-inline:auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    font-size: 15px;
+}
+.navegacion{
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+}
+@media (min-width:400px) {
+    .navegacion{
+        gap: 15px;
+    }
+}
+/* Menu izquierda */
+.logo{
+    width: 90px;
+    height: 40px;
+}
+@media (min-width:768px) {
+    .logo{
+        width: 130px;
+        height: 70px;
+    }
+}
+@media (min-width:992px) {
+    .navegacion--izquierda li:nth-child(2){
+        display: inline-block;
+    }
+}
+.navegacion--izquierda li:nth-child(3),
+.navegacion--izquierda li:nth-child(4),
+.navegacion--izquierda li:nth-child(5),
+.navegacion--izquierda li:nth-child(6),
+.navegacion--izquierda li:nth-child(7){
+    display: none;
+}
+@media (min-width:992px) {
+    .navegacion--izquierda li:nth-child(3),
+    .navegacion--izquierda li:nth-child(4),
+    .navegacion--izquierda li:nth-child(5),
+    .navegacion--izquierda li:nth-child(6),
+    .navegacion--izquierda li:nth-child(7){
+        display: flex;
+    }
+}
+/* Menu derecha */
+.navegacion--derecha li:nth-child(1) !important,
+.navegacion--derecha li:nth-child(4) !important
+{
+    width: 25px;
+}
+.usuario{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.navegacion--derecha li:nth-child(1),
+.navegacion--derecha li:nth-child(2),
+.navegacion--derecha li:nth-child(3),
+.navegacion--derecha li:nth-child(4){
+    display: none;
+}
+@media (min-width:330px) {
+    .navegacion--derecha li:nth-child(1),
+    .navegacion--derecha li:nth-child(4){
+        display: flex;
+    }
+}
+@media (min-width:992px) {
+    .navegacion--derecha li:nth-child(2),
+    .navegacion--derecha li:nth-child(3){
+        display: flex;
+    }
+}
+/* imagotipo */
+.imagotipo{
+    flex: 1;
+    width: 95%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 15px;
+}
+.imagotipo--imagen{
+    min-width: 500px;
+}
+.imagotipo--info{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.imagotipo--info p{
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+}
+.imagotipo--info p:nth-child(1){
+    border: 1px solid white;
+    background-color: white;
+    cursor: pointer;
+}
+.imagotipo--info p:nth-child(2){
+    border: 1px solid #6d6d63b3;
+    background-color: #6d6d63b3;
+    cursor: pointer;
+    color: white;
+}
+.imagotipo--info p:nth-child(1):hover,
+.imagotipo--info p:nth-child(2):hover{
+    background-color: transparent;
+    color: white;
+}
+/* footer */
+.footer{
+    padding-top: 20px;
+    background-color: black;
+}
+.footer--contenedor{
+    width: 95%;
+    margin-inline:auto;
+}
+.iconos{
+    display: flex;
+    gap: 20px;
+}
+.iconos li{
+    width: 30px;
+    height: 30px;
+}
+
+.informacion{
+    display: grid;
+    color: rgb(133, 133, 133);
+    gap: 20px;
+    margin-block:20px;
+    font-size: 15px;
+}
+@media (min-width:400px) {
+    .informacion{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width:768px) {
+    .informacion{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width:992px) {
+    .informacion{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+.informacion p:hover{
+    color: white;
+}
+.idioma{
+    color: white;
+    padding: 8px;
+    font-weight: 700;
+}
+.contruccion{
+    color: white;
+    padding: 10px;
+    font-weight: 900;
+    text-align: center;
+}
+.catalogos{
+    padding-block: 2px;
+    background-color: black;
+    color: white;
+}
+.catalogo--peliculas{
+    width: 95%;
+    margin-inline: auto;
+}
+.catalogo--peliculas h1,
+.catalogo--peliculas h2{
+    padding: 10px;
+}
+
+.peliculas{
+    overflow-x: scroll;
+    display: flex;
+    gap: 12px;
+}
+.peliculas::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+.pelicula{
+    min-width: 200px;
+    height: auto;
+}
+.icon-small {
+    width: 30px; /* Ajusta el tamaño según lo que prefieras */
+    height: 30px;
+}
+#synopsis {
+    color: #ffffff; /* Texto blanco */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+    padding: 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+}
+/* Clase para ocultar la sinopsis */
+.hidden {
+    display: none;
+}
+
+/* Estilo base para los botones */
+.btn-custom {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    margin: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+.btn-custom:hover {
+    background-color: #ff0000;
+}
+/* Estilos para los modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro más traslúcido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajuste para el modal más pequeño (sinopsis) */
+.small-modal {
+    width: 40%; /* Ajustar el ancho del modal */
+    height: auto;
+    max-height: 60%; /* Ajustar la altura máxima */
+    background-color: rgba(18, 18, 18, 0.9); /* Fondo del contenido ligeramente traslúcido */
+    text-align: left; /* Alinear el texto a la izquierda */
+    padding: 20px; /* Ajustar el padding */
+    color: white;
+    overflow-y: auto; /* Habilitar scroll si el contenido es demasiado grande */
+    border-radius: 10px; /* Redondear los bordes del modal */
+    font-size: 14px; /* Tamaño de fuente más pequeño para el contenido */
+    line-height: 1.5; /* Espaciado de línea más pequeño */
+}
+
+/* Estilo específico para el título del modal */
+.small-modal h1 {
+    font-size: 22px; /* Ajustar el tamaño del título */
+    font-weight: bold; /* Poner en negrita el título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Estilo para el contenido del párrafo */
+.small-modal p {
+    font-size: 13px; /* Reducir tamaño de fuente del contenido */
+    line-height: 1.5; /* Ajustar el espaciado del texto */
+    margin-bottom: 10px; /* Espaciado entre los párrafos */
+}
+
+/* Estilo para el iframe del video en el modal */
+.modal iframe {
+    width: 80%; /* Ocupar el 80% del ancho del modal */
+    height: 80%; /* Ocupar el 80% de la altura del modal */
+    max-width: 900px; /* Limitar el ancho máximo del video */
+    max-height: 500px; /* Limitar el alto máximo del video */
+}
+
+.modal-content {
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Fondo transparente para evitar gris */
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+/* Estilo base para los enlaces del menú */
+.navegacion a {
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto hover para los elementos del menú, exceptuando el logo */
+.navegacion a:not(.logo-container a):hover {
+    background-color: red; /* Sombreado rojo al pasar el mouse */
+    color: white; /* Mantener el texto en blanco */
+}
+
+/* Estilo para el dropdown */
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro traslúcido */
+    border: none; /* Quitar borde */
+    color: white; /* Color del texto blanco */
+}
+
+/* Estilo para los enlaces de los usuarios */
+.dropdown-item {
+    color: white; /* Color de los nombres de usuarios en blanco */
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+/* Estilo hover para los elementos del dropdown */
+.dropdown-item:hover {
+    background-color: rgba(255, 0, 0, 0.5); /* Sombreado en rojo translúcido */
+    color: white;
+}
+
+/* Estilo para las imágenes de los usuarios en el dropdown */
+.dropdown-item img {
+    margin-right: 10px; /* Espacio entre la imagen y el nombre */
+    border-radius: 5px; /* Bordes redondeados para las imágenes */
+}
+
+/* Ajuste de tamaño para el logo */
+.logo-container img {
+    width: 100px;  /* Tamaño intermedio del logo */
+    height: auto; /* Mantén la proporción de la altura */
+}
+

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <title>Inicio</title>
+    <link th:href="@{/images/movie.png}" rel="icon" type="image/x-icon">
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link
+            href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+            rel="stylesheet" />
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link th:href="@{/css/normalizacion.css}" rel="stylesheet">
+</head>
+<body>
+<aside class="background--banner">
+    <video muted autoplay loop poster="images/portada.jpg">
+        <source src="video/avengers4.mp4" type="video/mp4">
+        <img src="images/portada.jpg" alt="Imagen background">
+    </video>
+    <div class="banner">
+        <div class="menu">
+            <div class="navegacion navegacion--izquierda logo-container">
+                <a href="/inicio"><img src="images/movie.png" alt="Netflix"></a>
+            </div>
+            <nav>
+                <ul class="navegacion navegacion--izquierda">
+                    <li><a href="#">Explorar ⏷</a></li>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/peliculas">Peliculas</a></li>
+                    <li><a href="/peliculas">Series</a></li>
+                </ul>
+            </nav>
+
+            <nav>
+                <ul class="navegacion navegacion--derecha">
+                    <li><a href="/admin">Administracion</a></li>
+                    <li><a href="#"><img src="images/lupa.svg" alt="Lupa" class="icon-small"></a></li>
+                    <!--<li><a href="#"></a></li>-->
+                    <li><a href="#"><img src="images/campana.png" alt="Campana" class="icon-small"></a></li>
+                    <!--<li class="usuario img-thumbnail w-100"><a href="#"><img src="images/user.png" alt="Usuario" ></a></li>-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img id="selectedUserImg" src="images/user.png" alt="Usuario" class="img-thumbnail" style="width: 50px; height: 50px;">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="changeUser('images/user.png')">
+                                    <img src="images/user.png" alt="Usuario 1" class="img-thumbnail" style="width: 40px; height: 40px;"> Usuario 1
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="changeUser('images/user.jpg', 'otraPagina.html')">
+                                    <img src="images/user.jpg" alt="Usuario 2" class="img-thumbnail" style="width: 40px; height: 40px;"> Usuario 2
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <script>
+                        function changeUser(imageSrc, redirectUrl = null) {
+                            document.getElementById('selectedUserImg').src = imageSrc;
+
+                            if (redirectUrl) {
+                                window.location.href = redirectUrl;
+                            }
+                        }
+                    </script>
+                </ul>
+            </nav>
+        </div>
+        <div class="imagotipo">
+            <div class="imagotipo--imagen">
+                <img src="images/marvel.png" alt="Imagotipo">
+            </div>
+
+            <!-- Botones fuera de la sinopsis para que no se oculten -->
+            <div class="imagotipo--info" style="text-align: center; margin-top: 20px;">
+                <button id="playBtn" class="btn-custom">⏵ Play</button>
+                <button id="moreInfoBtn" class="btn-custom">ⓘ More Info</button>
+                <button id="trailerBtn" class="btn-custom">▶ Ver Trailer</button>
+            </div>
+        </div>
+
+        <div id="synopsisModal" class="modal" style="display: none;">
+            <div class="modal-content small-modal">
+                <span class="close">&times;</span>
+                <div id="synopsis">
+                    <p><strong>Avengers: The Secret Invasion</strong></p>
+                    <p>La película sigue a los Avengers mientras enfrentan una nueva amenaza global en forma de una invasión secreta de Skrulls, una raza alienígena que puede cambiar de forma. Esta invasión tiene como objetivo infiltrarse en las esferas más altas del poder y la sociedad, lo que obliga a los héroes a unirse una vez más para proteger al mundo.</p>
+                    <p><strong>Género:</strong> Acción, Ciencia Ficción, Aventura</p>
+                    <p><strong>Reparto:</strong> Robert Downey Jr., Chris Evans, Scarlett Johansson, Mark Ruffalo, Chris Hemsworth, Jeremy Renner</p>
+                    <p><strong>Calificación:</strong> ★★★★☆ 4/5</p>
+                </div>
+            </div>
+        </div>
+        <!-- Modal para ver el tráiler -->
+        <div id="trailerModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe id="trailerVideo" width="100%" height="100%" src="https://www.youtube.com/embed/Tp_YZNqNBhw" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</aside>
+<div layout:fragment="content" class="container my-5"></div>
+<main class="catalogos">
+    <section class="catalogo--peliculas">
+        <h1>Películas Populares</h1>
+        <div class="peliculas" id="populares">
+
+        </div>
+    </section>
+    <section class="catalogo--peliculas">
+        <h2>Películas de Estreno</h2>
+        <div class="peliculas" id="estreno">
+
+        </div>
+    </section>
+    <section class="catalogo--peliculas">
+        <h2>Películas más vistas</h2>
+        <div class="peliculas" id="vistas">
+
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer--contenedor">
+        <ul class="iconos">
+            <li><a href="#"><img src="images/facebook.svg" alt="facebook"></a></li>
+            <li><a href="#"><img src="images/instagram.svg" alt="instagram"></a></li>
+            <li><a href="#"><img src="images/github.svg" alt="github"></a></li>
+            <li><a href="#"><img src="images/linkedin.svg" alt="linkedin"></a></li>
+        </ul>
+        <div class="informacion">
+            <p>Preguntas frecuentes</p>
+            <p>Prensa</p>
+            <p>Formas de ver</p>
+            <p>Preferencias de cookies</p>
+            <p>Pruebas de velocidad</p>
+            <p>Centro de ayuda</p>
+            <p>Relaciones con inversionistas</p>
+            <p>Terminos de uso</p>
+            <p>Informacion corporativa</p>
+            <p>Cuenta</p>
+            <p>Empleo</p>
+            <p>Privacidad</p>
+            <p>Contactanos</p>
+            <p>Solo en netflix</p>
+        </div>
+        <p class="idioma">🌎︎ Español</p>
+        <p class="contruccion">Movie trailers 2024</p>
+    </div>
+</footer>
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<script
+        src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script
+        src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<div layout:fragment="scripts" th:remove="tag">
+
+</div>
+<script th:src="@{/js/index.js}"></script>
+<script src="js/sinapsis.js"></script>
+</body>
+</html>
